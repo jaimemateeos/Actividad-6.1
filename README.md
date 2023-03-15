@@ -108,21 +108,71 @@ done
 ```
 #Ejercicio 13
 ```Bash
-if [ -z "$1" ]; then
-  echo "Debes indicar un número como parámetro"
-else
-  n=$1
-  for i in $(seq 1 $n)
-  do
-    echo "hola"
-  done
-fi
+
 ```
 #Ejercicio 14
-
+```Bash
+n=$1
+for ((i=0;i<=n;i++))
+do
+  echo $i
+done
+```
 #Ejercicio 15
+```Bash
+n=$1
+sum=0
+for ((i=1;i<=n;i++))
+do
+  sum=$((sum+i))
+done
+echo $sum
+```
 #Ejercicio 16
+```Bash
+a=$1
+b=$2
+temp=$a
+a=$b
+b=$temp
+echo "a: $a"
+echo "b: $b"
+```
 #Ejercicio 17
+```Bash
+while true
+do
+  read -p "Ingrese una palabra (escriba ':q' para salir): " palabra
+  if [ $palabra = ":q" ]
+  then
+    break
+  fi
+done
+```
 #Ejercicio 18
+```Bash
+
+```
 #Ejercicio 19
+```Bash
+echo "Escribe palabras para guardar en un archivo (':q' para salir): "
+read palabra
+
+while [[ $palabra != ":q" ]]; do
+    echo $palabra >> palabras.txt
+    read palabra
+done
+echo "Las palabras han sido guardadas en 'palabras.txt'."
+```
 #Ejercicio 20
+```Bash
+echo "Escriba un número para comprobar si se encuentra en el archivo 'numeros.txt': "
+read numero
+
+if grep -Fxq "$numero" numeros.txt
+then
+    echo "El número $numero está en el archivo 'numeros.txt'."
+else
+    echo "El número $numero no está en el archivo 'numeros.txt'."
+fi
+```
